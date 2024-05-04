@@ -6,6 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HTML Academy: Кэт энерджи</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body class="page-body">
@@ -55,15 +59,15 @@
           <button class="main-nav__toggle" type="button">
             <span class="visually-hidden">Открыть меню</span>
           </button>
-          <ul class="main-nav__list main-nav__list--inner">
+          <ul class="main-nav__list">
             <li class="main-nav__item">
               <a href="index.html" class="main-nav__link">Главная</a>
             </li>
             <li class="main-nav__item">
               <a href="catalog.html" class="main-nav__link">Каталог Продукции</a>
             </li>
-            <li class="main-nav__item main-nav__item--active">
-              <a class="main-nav__link">Подбор Программы</a>
+            <li class="main-nav__item">
+              <a class="main-nav__link main-nav__link--active">Подбор Программы</a>
             </li>
           </ul>
         </nav>
@@ -71,13 +75,13 @@
     </div>
   </header>
   <main class="page-main">
-    <h1 class="page-main__title">Подбор программы</h1>
+    <h1 class="container page-main__title">Подбор программы</h1>
+    <p class="container cat-info__text">
+      Заполните анкету, и мы подберем программу питания для вашего кота
+    </p>
     <form class="program-form" action="https://echo.htmlacademy.ru" method="post">
       <div class="container program-form__wrapper">
         <fieldset class="form-section form-section--cat-info">
-          <p class="cat-info__text">
-            Заполните анкету, и мы подберем программу питания для вашего кота
-          </p>
           <div class="form-section__field">
             <label class="form-section__item">
               <span class="form-section__label-text">Имя:*</span>
@@ -93,7 +97,7 @@
           <div class="form-section__field">
             <label class="form-section__item">
               <span class="form-section__label-text">Возраст (лет):*</span>
-              <input class="form-section__input" type="number" placeholder="7" name="cat-age"/>
+              <input class="form-section__input" type="number" placeholder="7" name="cat-age" />
             </label>
           </div>
         </fieldset>
@@ -101,19 +105,19 @@
           <ul class="choose-program__list">
             <li class="choose-program__item">
               <label class="form-section__item">
-                <input class="visually-hidden form-section__radio" type="radio" name="program__radio" checked/>
+                <input class="visually-hidden form-section__radio" type="radio" name="program__radio" checked />
                 <span class="form-section__label-text form-section__label-text--radio">Похудение</span>
               </label>
             </li>
             <li class="choose-program__item">
               <label class="form-section__item">
-                <input class="visually-hidden form-section__radio" type="radio" name="program__radio"/>
+                <input class="visually-hidden form-section__radio" type="radio" name="program__radio" />
                 <span class="form-section__label-text form-section__label-text--radio">Набор массы</span>
               </label>
             </li>
             <li class="choose-program__item">
               <label class="form-section__item">
-                <input class="visually-hidden form-section__radio" type="radio" name="program__radio"/>
+                <input class="visually-hidden form-section__radio" type="radio" name="program__radio" />
                 <span class="form-section__label-text form-section__label-text--radio">Не знаю (нужен ваш совет )</span>
               </label>
             </li>
@@ -122,21 +126,41 @@
       </div>
       <fieldset class="form-section form-section--contacts">
         <h3 class="form-section__title">
-          <span>Контактные данные<br />(владельца кота)</span>
+          <span>Контактные данные <br />(владельца кота)</span>
         </h3>
         <div class="container program-form__wrapper">
           <div class="form-section__field">
             <label class="form-section__item">
               <span class="form-section__label-text">Email:*</span>
-              <input class="form-section__input" type="email" placeholder="kuklachev@gmail.com"
-              name="owner-email" />
+              <span class="form-section__input-wrapper">
+              <input class="form-section__input form-section__input--email" type="email" placeholder="kuklachev@gmail.com" name="owner-email" />
+              <svg class="form-section__input-icon" width="20" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <line x1="1.65" y1="5.71997" x2="1.65" y2="13.72" stroke="#222222" stroke-width="1.3"/>
+                <line x1="18.65" y1="5.71997" x2="18.65" y2="13.72" stroke="#222222" stroke-width="1.3"/>
+                <line x1="1" y1="13.07" x2="19" y2="13.07" stroke="#222222" stroke-width="1.3"/>
+                <line x1="1" y1="1.06997" x2="19" y2="1.06997" stroke="#222222" stroke-width="1.3"/>
+                <path d="M18.35 2.90207L10 9.39651L1.65 2.90206V1.36997H4.5L10 1.36997H15H18.35V2.90207Z" stroke="#222222" stroke-width="1.3"/>
+                </svg>
+              </span>
             </label>
           </div>
           <div class="form-section__field">
             <label class="form-section__item">
               <span class="form-section__label-text">Телефон:*</span>
-              <input class="form-section__input" type="tel" placeholder="8 (960) 900-60-90"
-              name="owner-tel" />
+              <span class="form-section__input-wrapper">
+              <input type="tel" class="form-section__input" name="Телефон" placeholder="8 (960) 900-60-90" maxlength="17" minlength="15" pattern="\8\ [0-9]{3}\ [0-9]{3}\-[0-9]{2}\-[0-9]{2}">
+              <svg class="form-section__input-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_153_253)">
+                <path d="M17.9 9.4H9.39999V10.6H17.9L15.8 12.7L16.7 13.6L19.8 10.5C19.8974 10.3702 19.95 10.2123 19.95 10.05C19.95 9.88772 19.8974 9.72982 19.8 9.6L16.7 6.5L15.8 7.4L17.9 9.4Z" fill="black"/>
+                <path d="M8.10001 19.4V13.2C8.08846 13.0447 8.02154 12.8987 7.91142 12.7886C7.80131 12.6785 7.65531 12.6116 7.50001 12.6H3.10001C3.10516 12.9167 3.23325 13.2189 3.45718 13.4428C3.68112 13.6668 3.98336 13.7949 4.30001 13.8H6.80001V18.8H3.10001C2.86326 18.8149 2.62591 18.7825 2.40176 18.7048C2.17762 18.6271 1.97115 18.5057 1.79436 18.3475C1.61757 18.1893 1.47399 17.9976 1.37196 17.7834C1.26992 17.5693 1.21148 17.337 1.20001 17.1V3.10001C1.19181 2.6373 1.36516 2.18977 1.68292 1.85331C2.00069 1.51686 2.43758 1.31824 2.90001 1.30001H6.80001V6.30001H4.40001C4.08336 6.30516 3.78112 6.43324 3.55718 6.65718C3.33325 6.88112 3.20516 7.18336 3.20001 7.50001H7.60001C7.75531 7.48846 7.90131 7.42154 8.01142 7.31142C8.12154 7.2013 8.18846 7.05531 8.20001 6.90001V0.600012C8.15232 0.443872 8.06117 0.304534 7.93721 0.198285C7.81325 0.0920352 7.66161 0.0232649 7.50001 1.23734e-05H3.10001C2.70599 -0.0133408 2.31321 0.0511002 1.94411 0.189651C1.57501 0.328202 1.23684 0.538145 0.948933 0.807477C0.661026 1.07681 0.42903 1.40025 0.266207 1.7593C0.103385 2.11835 0.01293 2.50598 1.46306e-05 2.90001V16.8C-0.0289644 17.1977 0.0246504 17.597 0.157487 17.9729C0.290324 18.3489 0.499509 18.6932 0.771886 18.9844C1.04426 19.2756 1.37394 19.5072 1.74019 19.6648C2.10643 19.8224 2.50132 19.9024 2.90001 19.9H7.50001C7.5735 19.915 7.64943 19.9133 7.72216 19.895C7.7949 19.8767 7.86259 19.8423 7.92021 19.7942C7.97783 19.7462 8.02391 19.6859 8.05504 19.6176C8.08616 19.5494 8.10153 19.475 8.10001 19.4Z" fill="black"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_153_253">
+                <rect width="20" height="20" fill="white"/>
+                </clipPath>
+                </defs>
+                </svg>
+              </span>
             </label>
           </div>
         </div>
@@ -153,28 +177,28 @@
       <fieldset class="form-section form-section__choose-extra">
         <h3 class="form-section__title"><span>Дополнительно</span></h3>
         <div class="container">
-          <ul class="choose-extra-list">
+          <ul class="choose-extra__list">
             <li class="choose-extra__item">
               <label class="form-section__item">
-                <input type="checkbox" class="visually-hidden form-section__checkbox" name="sugar"/>
+                <input type="checkbox" class="visually-hidden form-section__checkbox" name="sugar" />
                 <span class="form-section__label-text form-section__label-text--checkbox">Сахарозаменитель</span>
               </label>
             </li>
             <li class="choose-extra__item">
               <label class="form-section__item">
-                <input type="checkbox" class="visually-hidden form-section__checkbox" name="water"/>
+                <input type="checkbox" class="visually-hidden form-section__checkbox" name="water" />
                 <span class="form-section__label-text form-section__label-text--checkbox">Питьевая вода</span>
               </label>
             </li>
             <li class="choose-extra__item">
               <label class="form-section__item">
-                <input type="checkbox" class="visually-hidden form-section__checkbox" name="milk"/>
+                <input type="checkbox" class="visually-hidden form-section__checkbox" name="milk" />
                 <span class="form-section__label-text form-section__label-text--checkbox">Молоко</span>
               </label>
             </li>
             <li class="choose-extra__item">
               <label class="form-section__item">
-                <input type="checkbox" class="visually-hidden form-section__checkbox" name="vitamins"/>
+                <input type="checkbox" class="visually-hidden form-section__checkbox" name="vitamins" />
                 <span class="form-section__label-text form-section__label-text--checkbox">Витамины</span>
               </label>
             </li>
@@ -190,15 +214,17 @@
     </form>
   </main>
   <footer class="page-footer">
-    <section class="page-footer__contacts contacts">
+    <section class="contacts page-footer__contacts">
       <h2 class="visually-hidden">Контактная информация</h2>
-      <p class="contacts__item contacts__slogan">
-        Приглашаем к&nbsp;сотрудничеству дилеров!
-      </p>
-      <address class="contacts__item contacts__address">
-        ул. Большая Конюшенная, д. 19/8
-        <span class="contacts__city">Санкт-Петербург</span>
-      </address>
+      <div class="contacts__text-wrapper">
+        <p class="contacts__item contacts__slogan">
+          Приглашаем к&nbsp;сотрудничеству дилеров!
+        </p>
+        <address class="contacts__item contacts__address">
+          ул. Большая Конюшенная, д. 19/8
+          <span class="contacts__city">Санкт-Петербург</span>
+        </address>
+      </div>
       <div class="contacts-map"></div>
     </section>
     <section class="page-footer__info page-footer__wrapper">
@@ -247,9 +273,9 @@
           aria-label="Переход на страницу Интенсивного онлайн-курса Профессиональный HTML и CSS (уровень 2) компании HTML Academy"
           target="_blank">
           HTML Academy
-          <svg xmlns="http://www.w3.org/2000/svg" height="34.09" width="26.94" class="copyright__logo">
-            <use xlink:href="#logo-htmlacademy"></use>
-          </svg>
+          <svg  width="27" height="34" viewBox="0 0 27 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13.6426 0.0157537L13.5 0L0 1.40733V26.0129L13.5 34L27 26.0129V1.40733L13.6426 0.0157537ZM25.2344 25.0151L13.5 31.9573L1.76561 25.0151V14.9293L13.4507 21.8451L13.4701 23.0984L5.45351 18.3548L5.44295 19.5801L13.4894 24.3885L13.5088 25.675L5.46408 20.9174L5.45351 22.1427L13.5 26.9511L21.6239 22.1182V20.8929V16.909L25.2432 14.7595L25.2344 25.0151ZM25.2344 13.4519L22.0147 15.3319L20.5325 16.2071L13.4666 12.0201L13.456 13.2454L19.4957 16.818L19.4429 16.8495L19.3126 16.9247L18.4536 17.4166L13.4666 14.4689L13.456 15.6942L17.3921 18.0222L16.4591 18.6314L16.438 18.6436L13.4666 16.902L13.456 18.1273L15.4029 19.2615L13.4155 20.4483L1.7973 13.5762L13.4349 6.61831L25.2344 13.4519ZM25.2344 12.2266L13.4401 5.31075L1.76561 12.2196V2.9897L13.5 1.76442L25.2344 2.9897V12.2266Z" fill="#666666"/>
+            </svg>
         </a>
       </div>
     </section>
