@@ -1,0 +1,371 @@
+
+.cat-info__text {
+  margin-top: 37px;
+  margin-bottom: 27px;
+  font-size: 14px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @include tablet {
+    margin: 54px 0px 45px 40px;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  @include desktop {
+    margin: 60px auto;
+    margin-bottom: 43px;
+  }
+}
+
+.form-section {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.form-section__field {
+  margin: 13px 0;
+  padding-left: 0;
+
+  @include tablet {
+    margin: 20px 0;
+    padding-left: 40px;
+    padding-right: 36px;
+  }
+
+  @include desktop {
+    padding: 0;
+  }
+
+  .form-section--contacts &:last-child {
+    margin-bottom: 0;
+
+    @include desktop {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.form-section__item {
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #222;
+
+  @include tablet {
+    min-height: 40px;
+    font-size: 20px;
+  }
+}
+
+.form-section__label-text {
+  cursor: pointer;
+  margin: 0 10px 0 0;
+
+  .form-section--cat-info & {
+    margin: 0 14px 0 0;
+  }
+
+  @include tablet {
+    margin-right: 20px;
+  }
+}
+
+.form-section__input {
+  display: inline-block;
+  padding: 15px;
+  min-width: 170px;
+  flex: 1 0 75px;
+  height: 45px;
+  font-family: $oswald;
+  font-size: 16px;
+  line-height: 18px;
+  color: $text-color;
+  text-transform: uppercase;
+  border: 1px solid #E7E7E7;
+  outline: 0;
+  transition: 0.3s;
+
+  @include tablet {
+    flex: 1 0 150px;
+    height: 52px;
+    line-height: 1.5;
+    padding: 10px 20px;
+    font-size: 20px;
+    padding: 10px 0 10px 20px;
+  }
+
+  &:hover {
+    border-color: $special-grey;
+  }
+
+  &:focus {
+    border: 2px solid $text-color;
+  }
+
+  &:invalid {
+    border: 2px solid $error-status;
+  }
+}
+
+.form-section__choose-program {
+  margin: 0 -20px;
+  margin-top: 12px;
+  padding: 20px;
+  border-top: 1px solid #E7E7E7;
+  border-bottom: 1px solid #E7E7E7;
+
+  @include tablet {
+    margin: 50px 40px 0px 40px;
+    padding: 28px;
+    border: 1px solid #E7E7E7;
+  }
+
+  @include desktop {
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
+.choose-program__list,
+.choose-extra__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.choose-extra__list {
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(285px, 450px));
+    column-gap: 19px;
+    row-gap: 32px;
+    margin-left: 40px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(4, 221px);
+    margin-left: 0;
+    column-gap: 104px;
+  }
+}
+
+.choose-program__item,
+.choose-extra__item {
+  margin-bottom: 13px;
+}
+
+.choose-extra__item {
+  @include tablet {
+    margin-bottom: 0;
+  }
+}
+
+.choose-program__item:last-child {
+  margin-bottom: 0;
+}
+
+.form-section__label-text--radio,
+.form-section__label-text--checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 45px;
+
+  @include tablet {
+    padding-left: 60px;
+  }
+}
+
+.form-section__label-text--radio {
+  &::before {
+    @include pseudo-element('', absolute, inline-block);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $special-grey;
+    left: 0;
+    transition: all 0.3s;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:hover::before {
+    border: 1px solid $basic-green;
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    &::before,
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}
+
+.form-section__radio:checked+.form-section__label-text--radio::after {
+  @include pseudo-element('', absolute, inline-block);
+  width: 13.5px;
+  height: 13.5px;
+  border-radius: 50%;
+  background-color: $basic-green;
+  // top: 3.6px;
+  left: 8px;
+
+  @include tablet {
+    left: 11px;
+    width: 18px;
+    height: 18px;
+  }
+}
+
+.form-section__label-text--checkbox {
+  &::before {
+    @include pseudo-element('', absolute, inline-block);
+    width: 30px;
+    height: 30px;
+    border: 1px solid $special-grey;
+    left: 0;
+
+    @include tablet {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  &:hover::before {
+    border: 1px solid $basic-green;
+    transition: border opacity 0.3s;
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    &::before {
+      opacity: 0.3;
+    }
+  }
+}
+
+.form-section__checkbox:checked + .form-section__label-text--checkbox::before {
+  background: url("../../../img/vector/icon-tick.svg") no-repeat center;
+  background-size: 18px 14px;
+}
+
+.form-section__title {
+  margin:  26px 0px 35px 0px;
+  font-size: 24px;
+  line-height: 24px;
+  background-image: linear-gradient(to bottom, transparent 0, transparent 13px, $basic-green 13px, $basic-green 16px, transparent 16px, transparent 100%);
+
+  .form-section--message & {
+    margin-top: 29px;
+  }
+
+  &--extra {
+    margin-top: 15px;
+    margin-bottom: 33px;
+  }
+
+  & span {
+    display: inline-block;
+    padding: 0 20px;
+
+    @include tablet {
+      padding: 0 39px;
+      margin-left: 31px;
+    }
+
+    @include desktop {
+      margin: 0 calc((100vw - 1300px)/2);
+      padding: 0 40px;
+    }
+
+    background-color: #ffffff;
+  }
+
+  @include tablet {
+    margin: 70px 0px 75px 0px;
+    font-size: 36px;
+    line-height: 36px;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 22px, $basic-green 22px, $basic-green 25px, transparent 25px, transparent 100%);
+
+    .form-section--message & {
+      margin-top: 65px;
+    }
+
+    &--extra {
+      margin-top: 47px;
+      margin-bottom: 56px;
+    }
+
+    & br {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    margin: 49px 0px 54px 0px;
+
+    &--extra {
+      margin-bottom: 57px;
+    }
+
+    .form-section--message & {
+      margin-top: 49px;
+      margin-bottom: 75px;
+    }
+  }
+}
+
+.form-section__input-wrapper {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+}
+
+.form-section__input-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 15px;
+
+  @include tablet {
+    right: 20px;
+  }
+
+  .form-section__input:active+&,
+  .form-section__input:focus+& {
+    fill: $basic-green;
+  }
+
+  .form-section__input:invalid+& {
+    fill: $error-status;
+  }
+}
+
+.form-section__input--textarea {
+  height: 150px;
+  resize: none;
+  padding: 13px 12px 0 15px;
+  font-family: "Oswald", "Verdana", sans-serif;
+
+  @include tablet {
+    height: 174px;
+  }
+}

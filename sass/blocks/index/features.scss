@@ -1,0 +1,144 @@
+.features {
+  padding-top: 23px;
+
+  @include tablet {
+    padding-top: 45px;
+  }
+
+  @include desktop {
+    padding-top: 32px;
+  }
+}
+
+.features__title {
+  margin-bottom: 38px;
+  font-size: 36px;
+  line-height: 40px;
+
+  @include tablet {
+    margin-bottom: 32px;
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.features__list {
+  display: grid;
+  row-gap: 20px;
+  padding-left: 0;
+  padding-bottom: 42px;
+  margin: 0;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 34.6%);
+    column-gap: 139px;
+    row-gap: 33px;
+    counter-reset: features-num;
+  }
+
+  @include desktop {
+    grid-template-columns: repeat(4, 245px);
+    column-gap: 80px;
+    padding-bottom: 0;
+  }
+}
+
+.features__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 60px;
+  margin-top: 0;
+  counter-increment: feature_num;
+  z-index: 0;
+
+  &:first-child {
+    margin-top: 0px;
+  }
+
+  &:last-child {
+    margin-bottom: 0px;
+  }
+
+  &::before {
+    content: "";
+    flex-shrink: 0;
+    margin-right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #68b738;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50px;
+
+    @include tablet {
+      width: 80px;
+      height: 80px;
+      margin-right: 0;
+      margin-bottom: 32px;
+    }
+  }
+
+  &--icon-leaf::before {
+    background-image: url(../../../img/raster/advantage-leaf@1x.png);
+
+    @include retina {
+    background-image: url(../../../img/raster/advantage-leaf@2x.png);
+    }
+  }
+
+  &--icon-powder::before {
+    background-image: url(../../../img/raster/advantage-powder@1x.png);
+
+    @include retina {
+    background-image: url(../../../img/raster/advantage-powder@2x.png);
+    }
+  }
+
+  &--icon-cutlery::before {
+    background-image: url(../../../img/raster/advantage-dining@1x.png);
+
+    @include retina {
+      background-image: url(../../../img/raster/advantage-dining@2x.png);
+    }
+  }
+
+  &--icon-clock::before {
+    background-image: url(../../../img/raster/advantage-clock@1x.png);
+    @include retina {
+      background-image: url(../../../img/raster/advantage-clock@2x.png);
+    }
+  }
+
+  @include tablet {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 60px;
+    padding-top: 40px;
+
+    &::after {
+      content: counter(feature_num);
+      position: absolute;
+      left: 114px;
+      top: 132px;
+      font-size: 280px;
+      color: #f2f2f2;
+      z-index: -1;
+    }
+  }
+}
+
+.features__description {
+  @include tablet {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  & br {
+    display: none;
+
+    @include tablet {
+      display: inline;
+    }
+  }
+}

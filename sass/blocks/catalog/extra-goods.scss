@@ -1,0 +1,161 @@
+.extra-goods {
+  margin-top: 29px;
+  margin-bottom: 35px;
+
+  @include tablet {
+    margin-top: 72px;
+    margin-bottom: 75px;
+  }
+
+  @include desktop {
+    margin-top: 74px;
+    margin-bottom: 85px;
+  }
+}
+
+.extra-goods__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+
+  @include tablet {
+    gap: 68px;
+  }
+
+  @include desktop {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+}
+
+.extra-goods__heading {
+  font-size: 24px;
+  line-height: 24px;
+  background-image: linear-gradient(to bottom, transparent 0, transparent 13px, $basic-green 13px, $basic-green 16px, transparent 16px, transparent 100%);
+  margin-bottom: 33px;
+
+  & span {
+  display: inline-block;
+  padding: 0 20px;
+  background-color: #ffffff;
+
+  @include tablet {
+    margin-left: 30px;
+    padding: 0 36px;
+  }
+
+  @include desktop {
+    padding-left: 40px;
+    padding-right: 35px;
+    margin: 0 calc((100vw - 1300px)/2);
+  }
+  }
+
+  @include tablet {
+    font-size: 36px;
+    line-height: 36px;
+    background-image: linear-gradient(to bottom, transparent 0, transparent 22px, $basic-green 22px, $basic-green 25px, transparent 25px, transparent 100%);
+    margin-bottom:  79px;
+  }
+
+  @include desktop {
+    margin-bottom: 80px;
+  }
+}
+
+.extra-goods__list {
+  padding: 0;
+  margin: 0;
+}
+
+.extra-goods__item {
+  display: flex;
+  flex-direction: column;
+  padding-top: 13px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid $special-grey;
+
+  &:first-child {
+    border-top: 1px solid $special-grey;
+  }
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 27px 37px;
+    border-left: 1px solid $special-grey;
+    border-right: 1px solid $special-grey;
+  }
+
+  @include desktop {
+    width: 895px;
+    align-items: center;
+    padding: 16px 0;
+    padding-bottom: 15px;
+    border: none;
+    border-bottom: 1px solid $special-grey;
+  }
+}
+
+.extra-goods__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 14px 0;
+  font-family: $arial;
+  font-size: 14px;
+  line-height: 14px;
+  color: $text-color;
+
+  @include tablet {
+    margin: 0;
+    margin-top: 5px;
+    gap: 50px;
+    font-size: 16px;
+  }
+
+  @include desktop {
+    gap: 0px;
+  }
+}
+
+.extra-goods__title {
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+
+  @include tablet {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @include desktop {
+    width: 284px;
+  }
+}
+
+.extra-goods__size {
+  @include desktop {
+    width: 245px;
+  }
+}
+
+.extra-goods__btn {
+  flex: 1 0 100%;
+
+  @include tablet {
+    margin-top: 26px;
+    min-height: 38px;
+    padding: 9px 0;
+  }
+
+  @include desktop {
+    flex: 0 0 244px;
+    min-width: 244px;
+    min-height: 40px;
+    margin-top: 0;
+  }
+}

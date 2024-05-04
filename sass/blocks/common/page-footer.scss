@@ -1,0 +1,46 @@
+.page-footer {
+  background-color: #F2F2F2;
+}
+
+
+.page-footer__logo-link {
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+
+  & svg {
+    display: block;
+    fill: #111;
+  }
+}
+
+.page-footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  padding-bottom: 20px;
+
+  @include tablet {
+    flex-direction: row;
+    padding-top: 61px;
+    padding-bottom: 60px;
+    justify-content: space-between;
+  }
+}
+
+.page-footer__logo {
+  padding-bottom: 32px;
+
+  @include tablet {
+    padding-bottom: 0;
+    margin-right: 30px;
+  }
+}
+
